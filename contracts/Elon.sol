@@ -23,8 +23,14 @@ contract ElonNFT is ERC721URIStorage {
            _tokenIds.increment();
            uint256 newItemId = _tokenIds.current();
            _mint(msg.sender, newItemId);
-           _setTokenURI(newItemId, "Hello Mate");
+           // https://jsonkeeper.com/
+           // https://app.pinata.cloud/ to host images decentralized manner
+           _setTokenURI(newItemId, "https://jsonkeeper.com/b/MHPK");
            console.log("The NFT ID %s has been minted to %s", newItemId, msg.sender);
            return newItemId;
        }
 }
+
+// dev net - hardhat, local BC environment, simple, fast
+// test net - simulation of live ethereum env
+// mainnet - real $$ to push 
